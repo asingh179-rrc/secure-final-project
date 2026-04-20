@@ -9,7 +9,6 @@ on:
 
 jobs:
   analyze:
-    name: Analyze
     runs-on: ubuntu-latest
 
     permissions:
@@ -31,10 +30,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install bandit
 
+      - name: List Python files
+        run: |
+          find singh_arundeep_activity_2/shape -name "*.py"
+
       - name: Perform Bandit Analysis
         run: |
-          bandit -r singh_arundeep_activity_2/ -f json -o bandit-report.json
-          bandit -r singh_arundeep_activity_2/
+          bandit -r singh_arundeep_activity_2/shape
+
+      - name: Save Bandit report
+        run: |
+          bandit -r singh_arundeep_activity_2/shape -f json -o bandit-report.json
 
       - name: Upload Bandit report
         uses: actions/upload-artifact@v4
