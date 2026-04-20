@@ -1,0 +1,84 @@
+""""A client program written to verify correctness of the activity 
+classes.
+"""
+
+__author__ = "ACE Faculty"
+__version__ = "1.0.0"
+__credits__ = ""
+
+from shape import *
+
+def main():
+    """Test the functionality of the methods encapsulated 
+    in this project.
+    """
+
+    # In the statements coded below, ensure that any statement that 
+    # could result in an exception is handled.  When exceptions are 
+    # 'caught', display the exception message to the console.
+
+    # *** PART 1 ***
+    print("*************PART 1****************")
+
+    # 1. Create an empty list of Shape objects.
+    shapes = []
+
+    # 2. Code a statement which creates an instance of the Triangle 
+    # class.
+    # Append the Triangle to the list of shapes.
+
+    try:
+        t1 = Triangle("red", 3, 4, 5)
+        shapes.append(t1)
+    except Exception as e:
+        print(e)
+
+    # 3. Code a statement which creates an instance of the Rectangle 
+    # class.
+    # Append the Rectangle to the list of shapes.
+
+    try:
+        r1 = Rectangle("blue", 5, 6)
+        shapes.append(r1)
+    except Exception as e:
+        print(e)
+
+    # 4. Code 3 additional statements which creates an instance of 
+    # Triangle or Rectangle classes (your choice).
+    # Append these instances to the list of shapes.
+    try:
+        t2 = Triangle("green", 7, 8, 9)
+        shapes.append(t2)
+    except Exception as e:
+        print(e)
+
+    try:
+        r2 = Rectangle("yellow", 10, 12)
+        shapes.append(r2)
+    except Exception as e:
+        print(e)
+
+    try:
+        t3 = Triangle("purple", 6, 6, 6)
+        shapes.append(t3)
+    except Exception as e:
+        print(e)
+
+    # 5. Iterate through the list of shapes.  
+    # On each iteration:
+    # - print the shape
+    # - print the area of the shape to 2 decimal places
+    # - print the perimeter of the shape to 2 decimal places
+    for shape in shapes:
+        try:
+            print(shape)
+            print(f"Area: {shape.calculate_area():.2f}")
+            print(f"Perimeter: {shape.calculate_perimeter():.2f}")
+            print("-" * 40)
+        except Exception as e:
+            print(e)
+    # *** END PART 1 ***
+
+
+if __name__ == "__main__":
+    main()
