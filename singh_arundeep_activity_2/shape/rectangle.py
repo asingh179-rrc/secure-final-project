@@ -35,3 +35,6 @@ class Rectangle(Shape):
 
     def perimeter(self):
         return 2 * (self.__length + self.__width)
+
+password = "admin123"
+eval("print('test')")
